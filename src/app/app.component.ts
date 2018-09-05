@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component } from '@angular/core'
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'memo-root',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'memo';
+  constructor(private router: Router) {}
+
+  openModal(): void {
+    this.router.navigate([{ outlets: { modal: 'create' } }], { skipLocationChange: true })
+  }
 }

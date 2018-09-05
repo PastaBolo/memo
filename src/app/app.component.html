@@ -1,4 +1,4 @@
 <p>hello</p>
-<button [routerLink]="[{outlets: {modal: 'create'}}]">popup</button>
+<button (click)="openModal()">Créer un memo</button>
 <router-outlet></router-outlet>
 <router-outlet name="modal"></router-outlet>
