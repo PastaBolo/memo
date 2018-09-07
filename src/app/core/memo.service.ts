@@ -8,16 +8,19 @@ import { Memo } from '@app/shared'
   providedIn: 'root'
 })
 export class MemoService {
+  private memosUrl = 'http://localhost:3000/memos'
   private httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   }
 
   constructor(private http: HttpClient) {}
 
+  getMemos(): Observable<Memo[]> {
+    return this.http.get<Memo[]>(this.memosUrl)
+  }
+
   addMemo(memo: Memo): Observable<Memo> {
-    return this.http
-      .post<Memo>('http://localhost:3000/memos', memo, this.httpOptions)
-      .pipe(catchError(() => of(null as Memo)))
+    return this.http.post<Memo>(this.memosUrl, memo, this.httpOptions).pipe(catchError(() => of(null as Memo)))
     // .pipe(catchError(err => throwError(err))
   }
 }
