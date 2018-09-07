@@ -1,6 +1,8 @@
 import { Component } from '@angular/core'
 import { FormBuilder, Validators } from '@angular/forms'
 import { Router } from '@angular/router'
+import { Memo } from '@app/shared'
+import { MemoService } from '../core'
 
 @Component({
   selector: 'memo-memo-form',
@@ -14,7 +16,7 @@ export class MemoFormComponent {
     tags: [[]]
   })
 
-  constructor(private fb: FormBuilder, private router: Router) {}
+  constructor(private fb: FormBuilder, private router: Router, private memoService: MemoService) {}
 
   addTag(tagInput: HTMLInputElement): void {
     if (tagInput.value.trim()) {
@@ -27,8 +29,8 @@ export class MemoFormComponent {
     tagInput.focus()
   }
 
-  submit(): void {
-    console.log('submitted')
+  submit(memo: Memo): void {
+    this.memoService.addMemo(memo).subscribe()
   }
 
   closeModal(): void {

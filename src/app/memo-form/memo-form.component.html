@@ -1,7 +1,7 @@
 <memo-modal>
   <h1>Créer un memo</h1>
   <form [formGroup]="form"
-        (ngSubmit)="submit()"
+        (ngSubmit)="submit(form.value)"
         (keydown.enter)="$event.preventDefault()">
     <label>
       <div>Nom</div>
@@ -16,7 +16,8 @@
       <div>Tags</div>
       <input #tagInput
              (keydown.enter)="addTag(tagInput)">
-      <button (click)="addTag(tagInput)">Ajouter</button>
+      <button type="button"
+              (click)="addTag(tagInput)">Ajouter</button>
       <ul>
         <li *ngFor="let tag of form.get('tags').value">{{ tag }}</li>
       </ul>
@@ -24,6 +25,7 @@
     {{ form.value | json }}
     <button type="submit"
             [disabled]="form.invalid">Créer</button>
-    <button (click)="closeModal()">Fermer</button>
+    <button type="button"
+            (click)="closeModal()">Fermer</button>
   </form>
 </memo-modal>
