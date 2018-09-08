@@ -28,8 +28,13 @@ export class MemoService {
         })
       )
     }
+    // In this case, the subscription has to be unsubscribe handly
     this.memosSource.next(this.memos)
     return of(this.memos)
+  }
+
+  getMemo(id: number): Memo {
+    return this.memos.find(m => m.id === id) || ({} as Memo)
   }
 
   addMemo(memo: Memo): Observable<Memo> {
