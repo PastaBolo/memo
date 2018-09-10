@@ -1,4 +1,4 @@
-import { Component } from '@angular/core'
+import { Component, HostListener } from '@angular/core'
 import { Router } from '@angular/router'
 
 @Component({
@@ -9,7 +9,12 @@ import { Router } from '@angular/router'
 export class ModalComponent {
   constructor(private router: Router) {}
 
-  closeModal(): void {
+  @HostListener('click')
+  onClick() {
+    this.closeModal()
+  }
+
+  private closeModal(): void {
     this.router.navigate([{ outlets: { modal: null } }])
   }
 }
