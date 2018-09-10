@@ -34,7 +34,7 @@ export class MemoService {
   }
 
   getMemo(id: number): Memo {
-    return this.memos.find(m => m.id === id) || ({} as Memo)
+    return this.memos.find(m => m.id === id)
   }
 
   addMemo(memo: Memo): Observable<Memo> {
@@ -44,6 +44,12 @@ export class MemoService {
         this.memosSource.next(this.memos)
       })
     )
+  }
+
+  updateMemo(memo: Memo): Observable<Memo> {
+    return this.http
+      .put<Memo>(`${this.memosUrl}/${memo.id}`, memo, this.httpOptions)
+      .pipe(tap(memoRes => (memo = memoRes)))
   }
 
   deleteMemo(memo: Memo): Observable<{}> {

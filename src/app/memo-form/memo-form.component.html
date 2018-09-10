@@ -1,7 +1,6 @@
 <memo-modal>
   <h1>Créer un memo</h1>
   <form [formGroup]="form"
-        (ngSubmit)="submit(form.value)"
         (keydown.enter)="$event.preventDefault()">
     <label>
       <div>Nom</div>
@@ -23,8 +22,12 @@
       </ul>
     </div>
     {{ form.value | json }}
-    <button type="submit"
+    <button *ngIf="!memoToUpdate"
+            (click)="addMemo()"
             [disabled]="form.invalid">Créer</button>
+    <button *ngIf="memoToUpdate"
+            (click)="updateMemo()"
+            [disabled]="form.invalid || !form.dirty">Modifier</button>
     <button type="button"
             (click)="closeModal()">Fermer</button>
   </form>
