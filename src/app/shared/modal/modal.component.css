@@ -1,5 +1,6 @@
-.backdrop,
-.content {
+.backdrop {
+  background-color: #000;
+  opacity: 0.5;
   position: fixed;
   top: 0;
   bottom: 0;
@@ -8,15 +9,16 @@
   z-index: 1000;
 }
 
-.backdrop {
-  background-color: #000;
-  opacity: 0.5;
-}
-
 .content {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: absolute;
+  top: 10vh;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  margin-bottom: 10vh;
 }
 
 .content > div {
