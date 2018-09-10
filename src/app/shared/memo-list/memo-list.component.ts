@@ -1,4 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core'
+import { Router } from '@angular/router'
 import { Observable, Subscription } from 'rxjs'
 import { MemoService } from '@app/core'
 import { Memo } from '@app/shared'
@@ -11,7 +12,7 @@ import { Memo } from '@app/shared'
 export class MemoListComponent implements OnInit, OnDestroy {
   memos$: Observable<Memo[]>
   private memosSubscription: Subscription
-  constructor(private memoService: MemoService) {}
+  constructor(private router: Router, private memoService: MemoService) {}
 
   ngOnInit() {
     this.memos$ = this.memoService.memos$
@@ -25,5 +26,9 @@ export class MemoListComponent implements OnInit, OnDestroy {
 
   deleteMemo(memo: Memo): void {
     this.memoService.deleteMemo(memo).subscribe()
+  }
+
+  editMemo(memo: Memo): void {
+    this.router.navigate([{ outlets: { modal: ['update', memo.id] } }], { skipLocationChange: true })
   }
 }

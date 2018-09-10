@@ -9,9 +9,18 @@ const routes: Routes = [
     component: MemosComponent
   },
   {
-    path: 'create',
-    component: MemoFormComponent,
-    outlet: 'modal'
+    path: '',
+    outlet: 'modal',
+    children: [
+      {
+        path: 'create',
+        component: MemoFormComponent
+      },
+      {
+        path: 'update/:id',
+        component: MemoFormComponent
+      }
+    ]
   }
 ]
 
