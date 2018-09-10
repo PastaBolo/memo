@@ -25,7 +25,7 @@ export class MemoListComponent implements OnInit, OnDestroy {
   }
 
   deleteMemo(memo: Memo): void {
-    this.memoService.deleteMemo(memo).subscribe()
+    this.memoService.deleteMemo(memo.id).subscribe()
   }
 
   editMemo(memo: Memo): void {

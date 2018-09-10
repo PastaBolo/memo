@@ -52,10 +52,10 @@ export class MemoService {
       .pipe(tap(memoRes => (memo = memoRes)))
   }
 
-  deleteMemo(memo: Memo): Observable<{}> {
-    return this.http.delete(`${this.memosUrl}/${memo.id}`, this.httpOptions).pipe(
+  deleteMemo(id: number): Observable<{}> {
+    return this.http.delete(`${this.memosUrl}/${id}`, this.httpOptions).pipe(
       tap(() => {
-        this.memos = this.memos.filter(({ id }) => id !== memo.id)
+        this.memos = this.memos.filter(m => m.id !== id)
         this.memosSource.next(this.memos)
       })
     )
