@@ -1,6 +1,5 @@
-import { Component, OnInit, OnDestroy } from '@angular/core'
+import { Component } from '@angular/core'
 import { Router } from '@angular/router'
-import { Observable, Subscription } from 'rxjs'
 import { MemoService } from '@app/core'
 import { Memo } from '@app/shared'
 
@@ -9,19 +8,11 @@ import { Memo } from '@app/shared'
   templateUrl: './memo-list.component.html',
   styleUrls: ['./memo-list.component.css']
 })
-export class MemoListComponent implements OnInit, OnDestroy {
-  memos$: Observable<Memo[]>
-  private memosSubscription: Subscription
+export class MemoListComponent {
   constructor(private router: Router, private memoService: MemoService) {}
 
-  ngOnInit() {
-    this.memos$ = this.memoService.memos$
-    this.memosSubscription = this.memoService.getMemos().subscribe()
-  }
-
-  ngOnDestroy(): void {
-    // In case the getMemos Observable is not returned by the HttpClient, there is no automatic unsubscription
-    if (!this.memosSubscription.closed) this.memosSubscription.unsubscribe()
+  get memos(): Memo[] {
+    return this.memoService.memos
   }
 
   deleteMemo(memo: Memo): void {

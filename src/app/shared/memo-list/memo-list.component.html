@@ -1,5 +1,5 @@
 <ul>
-  <li *ngFor="let memo of memos$ | async">
+  <li *ngFor="let memo of memos">
     <span>{{ memo.name }}</span>
     <fa-icon icon="edit"
              (click)="editMemo(memo)"></fa-icon>

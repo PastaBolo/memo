@@ -1,12 +1,19 @@
 import { NgModule } from '@angular/core'
 import { Routes, RouterModule } from '@angular/router'
+import { MemosResolver } from '@app/core'
 import { MemosComponent } from './memos/memos.component'
 import { MemoFormComponent } from './memo-form/memo-form.component'
 
 const routes: Routes = [
   {
-    path: 'memos',
-    component: MemosComponent
+    path: '',
+    resolve: { memos: MemosResolver },
+    children: [
+      {
+        path: 'memos',
+        component: MemosComponent
+      }
+    ]
   },
   {
     path: '',
