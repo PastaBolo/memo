@@ -1,2 +1,2 @@
 export * from './memos.resolver'
-export * from './memo.service'
+export * from './memos.service'

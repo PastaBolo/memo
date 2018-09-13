@@ -3,7 +3,7 @@ import { FormBuilder, Validators } from '@angular/forms'
 import { Router, ActivatedRoute } from '@angular/router'
 import { Subscription } from 'rxjs'
 import { Memo } from '@app/shared'
-import { MemoService } from '../core'
+import { MemosService } from '@app/core'
 
 @Component({
   selector: 'memo-memo-form',
@@ -23,7 +23,7 @@ export class MemoFormComponent implements OnInit, OnDestroy {
     private fb: FormBuilder,
     private router: Router,
     private route: ActivatedRoute,
-    private memoService: MemoService
+    private memosService: MemosService
   ) {}
 
   ngOnInit(): void {
@@ -49,12 +49,12 @@ export class MemoFormComponent implements OnInit, OnDestroy {
   }
 
   addMemo(): void {
-    this.memoService.addMemo(this.form.value).subscribe(() => this.closeModal())
+    this.memosService.addMemo(this.form.value).subscribe(() => this.closeModal())
   }
 
   updateMemo(): void {
     Object.assign(this.memoToUpdate, this.form.value)
-    this.memoService.updateMemo(this.memoToUpdate).subscribe(() => this.closeModal())
+    this.memosService.updateMemo(this.memoToUpdate).subscribe(() => this.closeModal())
   }
 
   closeModal(): void {
@@ -62,7 +62,7 @@ export class MemoFormComponent implements OnInit, OnDestroy {
   }
 
   private setFormForUpdate(id: number) {
-    this.memoToUpdate = this.memoService.getMemo(id)
+    this.memoToUpdate = this.memosService.getMemo(id)
     const { name, description, tags } = this.memoToUpdate || {
       name: null,
       description: null,

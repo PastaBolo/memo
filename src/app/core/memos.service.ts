@@ -7,7 +7,7 @@ import { Memo } from '@app/shared'
 @Injectable({
   providedIn: 'root'
 })
-export class MemoService {
+export class MemosService {
   private _memos: Memo[]
   private memosUrl = 'http://localhost:3000/memos'
   private httpOptions = {

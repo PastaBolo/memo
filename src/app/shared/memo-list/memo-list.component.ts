@@ -1,6 +1,6 @@
 import { Component } from '@angular/core'
 import { Router } from '@angular/router'
-import { MemoService } from '@app/core'
+import { MemosService } from '@app/core'
 import { Memo } from '@app/shared'
 
 @Component({
@@ -9,14 +9,14 @@ import { Memo } from '@app/shared'
   styleUrls: ['./memo-list.component.css']
 })
 export class MemoListComponent {
-  constructor(private router: Router, private memoService: MemoService) {}
+  constructor(private router: Router, private memosService: MemosService) {}
 
   get memos(): Memo[] {
-    return this.memoService.memos
+    return this.memosService.memos
   }
 
   deleteMemo(memo: Memo): void {
-    this.memoService.deleteMemo(memo.id).subscribe()
+    this.memosService.deleteMemo(memo.id).subscribe()
   }
 
   editMemo(memo: Memo): void {
