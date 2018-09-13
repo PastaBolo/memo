@@ -28,15 +28,8 @@ export class MemoFormComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
-      if (params.id) {
-        this.memoToUpdate = this.memoService.getMemo(+params.id)
-        if (!!this.memoToUpdate) {
-          const { name = null, description = null, tags = [] } = this.memoToUpdate
-          this.form.setValue({ name, description, tags: tags.slice() })
-        }
-      }
+      if (params.id) this.setFormForUpdate(+params.id)
     })
-
     this.tagsValueSubscription = this.form.get('tags').valueChanges.subscribe(() => this.form.markAsDirty())
   }
 
@@ -66,5 +59,15 @@ export class MemoFormComponent implements OnInit, OnDestroy {
 
   closeModal(): void {
     this.router.navigate([{ outlets: { modal: null } }])
+  }
+
+  private setFormForUpdate(id: number) {
+    this.memoToUpdate = this.memoService.getMemo(id)
+    const { name, description, tags } = this.memoToUpdate || {
+      name: null,
+      description: null,
+      tags: []
+    }
+    this.form.setValue({ name, description, tags: tags.slice() })
   }
 }

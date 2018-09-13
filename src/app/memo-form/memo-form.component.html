@@ -24,11 +24,14 @@
     {{ form.value | json }}
     <button *ngIf="!memoToUpdate"
             (click)="addMemo()"
+            (keydown.enter)="addMemo()"
             [disabled]="form.invalid">Créer</button>
     <button *ngIf="memoToUpdate"
             (click)="updateMemo()"
+            (keydown.enter)="updateMemo()"
             [disabled]="form.invalid || !form.dirty">Modifier</button>
     <button type="button"
-            (click)="closeModal()">Fermer</button>
+            (click)="closeModal()"
+            (keydown.enter)="closeModal()">Fermer</button>
   </form>
 </memo-modal>
