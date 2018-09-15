@@ -5,4 +5,5 @@ export interface Memo {
   tags: string[]
   creationDate?: Date
   updateDate?: Date
+  consultationDate?: Date
 }
