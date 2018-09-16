@@ -11,7 +11,7 @@ import { AppComponent } from './app.component'
 import { ModalComponent } from '@app/shared'
 import { MemoFormComponent } from './memo-form/memo-form.component'
 import { MemosComponent } from './memos/memos.component'
-import { MemoListComponent } from './shared/memo-list/memo-list.component'
+import { MemoListComponent } from './memos/memo-list/memo-list.component'
 
 library.add(faEdit, faTimes)
 
