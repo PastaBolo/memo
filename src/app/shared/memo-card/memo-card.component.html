@@ -1,0 +1,13 @@
+<div class="header">
+  <div class="name">{{ memo.name }}</div>
+  <ng-container *ngFor="let tag of memo.tags">
+    <memo-tag-card>{{ tag }}</memo-tag-card>
+  </ng-container>
+</div>
+<div class="content">
+  <div>{{ memo.description }}</div>
+</div>
+<div class="footer">
+  <div class="date">Ajouté le {{ memo.creationDate | date: 'dd/MM/yyyy' }}</div>
+  <div>New</div>
+</div>

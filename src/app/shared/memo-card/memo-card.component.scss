@@ -1,0 +1,38 @@
+:host {
+  display: block;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+
+  .name {
+    margin-right: 25px;
+    font-size: 25px;
+    font-weight: bold;
+  }
+}
+
+.content,
+.footer {
+  padding: 0 5px;
+}
+
+.content {
+  margin: 20px 0;
+}
+
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  font-style: italic;
+
+  .date {
+    font-size: 12px;
+  }
+}

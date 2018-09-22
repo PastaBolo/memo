@@ -1,8 +1,26 @@
 <h1>Styleguide</h1>
 <sg-styleguide-element>
   <h2 sg-title>Modal</h2>
-  <button sg-example (click)="openModal()">open modal</button>
+  <div sg-example>
+    <button sg-example (click)="openModal()">open modal</button>
+  </div>
   <p sg-description>Ceci est une modal</p>
   <p sg-api>API de la modal</p>
+</sg-styleguide-element>
+<sg-styleguide-element>
+  <h2 sg-title>Memo card</h2>
+  <div sg-example>
+    <memo-memo-card [memo]="memo"></memo-memo-card>
+  </div>
+  <p sg-description>Ceci est un memo card</p>
+  <p sg-api>API du memo card</p>
+</sg-styleguide-element>
+<sg-styleguide-element>
+  <h2 sg-title>Tag card</h2>
+  <div sg-example>
+    <memo-tag-card>Tag</memo-tag-card>
+  </div>
+  <p sg-description>Ceci est un tag card</p>
+  <p sg-api>API du tag card</p>
 </sg-styleguide-element>
 <router-outlet name="modal"></router-outlet>

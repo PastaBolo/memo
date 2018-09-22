@@ -1,3 +1,5 @@
 export * from './shared.module'
 export * from './models'
 export * from './modal/modal.component'
+export * from './memo-card/memo-card.component'
+export * from './tag-card/tag-card.component'

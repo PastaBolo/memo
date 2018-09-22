@@ -8,7 +8,7 @@ import { faEdit, faTimes } from '@fortawesome/free-solid-svg-icons'
 
 import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
-import { ModalComponent } from '@app/shared'
+import { ModalComponent, MemoCardComponent, TagCardComponent } from '@app/shared'
 import { MemoFormComponent } from './memo-form/memo-form.component'
 import { MemosComponent } from './memos/memos.component'
 import { MemoListComponent } from './memos/memo-list/memo-list.component'
@@ -16,7 +16,15 @@ import { MemoListComponent } from './memos/memo-list/memo-list.component'
 library.add(faEdit, faTimes)
 
 @NgModule({
-  declarations: [AppComponent, ModalComponent, MemoFormComponent, MemosComponent, MemoListComponent],
+  declarations: [
+    AppComponent,
+    ModalComponent,
+    MemoFormComponent,
+    MemosComponent,
+    MemoListComponent,
+    MemoCardComponent,
+    TagCardComponent
+  ],
   imports: [BrowserModule, HttpClientModule, FormsModule, ReactiveFormsModule, FontAwesomeModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent]
