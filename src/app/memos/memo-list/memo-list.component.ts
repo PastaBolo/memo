@@ -14,12 +14,4 @@ export class MemoListComponent {
   get memos(): Memo[] {
     return this.memosService.memos
   }
-
-  deleteMemo(memo: Memo): void {
-    this.memosService.deleteMemo(memo.id).subscribe()
-  }
-
-  editMemo(memo: Memo): void {
-    this.router.navigate([{ outlets: { modal: ['update', memo.id] } }], { skipLocationChange: true })
-  }
 }

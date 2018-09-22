@@ -1,9 +1,2 @@
-<ul>
-  <li *ngFor="let memo of memos">
-    <span>{{ memo.name }}</span>
-    <fa-icon icon="edit"
-             (click)="editMemo(memo)"></fa-icon>
-    <fa-icon icon="times"
-             (click)="deleteMemo(memo)"></fa-icon>
-  </li>
-</ul>
+<memo-memo-card *ngFor="let memo of memos" [memo]="memo" manageMemo>
+</memo-memo-card>
