@@ -14,7 +14,7 @@ export class AppComponent {
       'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veniam quia quisquam, ad necessitatibus est quas iure culpa eos iste! Veritatis nisi non necessitatibus tempore aliquam voluptate exercitationem! Quae numquam molestiae possimus illo, obcaecati laboriosam eaque est magnam soluta nulla, molestias maxime inventore earum dolore nostrum commodi quod iusto recusandae. Quos!',
     tags: ['Angular', 'Ngrx', 'Components'],
     creationDate: 1536561346856,
-    id: 11
+    id: 1
   }
 
   constructor(private router: Router) {}
