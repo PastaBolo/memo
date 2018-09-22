@@ -1,8 +1,14 @@
 <div class="header">
-  <div class="name">{{ memo.name }}</div>
-  <ng-container *ngFor="let tag of memo.tags">
-    <memo-tag-card>{{ tag }}</memo-tag-card>
-  </ng-container>
+  <div>
+    <div class="name">{{ memo.name }}</div>
+    <ng-container *ngFor="let tag of memo.tags">
+      <memo-tag-card>{{ tag }}</memo-tag-card>
+    </ng-container>
+  </div>
+  <div class="icons">
+    <fa-icon class="icon" shakeScaleHover [icon]="['fas', 'pencil-alt']" size="lg" (click)="editMemo(memo)"></fa-icon>
+    <fa-icon class="icon" shakeScaleHover [icon]="['far', 'trash-alt']" size="lg" (click)="deleteMemo(memo)"></fa-icon>
+  </div>
 </div>
 <div class="content">
   <div>{{ memo.description }}</div>

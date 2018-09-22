@@ -7,8 +7,22 @@
 
 .header {
   display: flex;
-  flex-wrap: wrap;
-  align-items: flex-end;
+  justify-content: space-between;
+
+  > div:first-child {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+  }
+
+  .icons {
+    display: flex;
+    flex-wrap: nowrap;
+
+    > .icon {
+      margin-right: 5px;
+    }
+  }
 
   .name {
     margin-right: 25px;
