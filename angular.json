@@ -208,5 +208,10 @@
       }
     }
   },
-  "defaultProject": "memo"
+  "defaultProject": "memo",
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "scss"
+    }
+  }
 }
