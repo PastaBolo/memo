@@ -3,7 +3,7 @@ export interface Memo {
   name: string
   description: string
   tags: string[]
-  creationDate?: Date
-  updateDate?: Date
-  consultationDate?: Date
+  creationDate?: number
+  updateDate?: number
+  consultationDate?: number
 }
