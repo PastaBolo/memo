@@ -1,4 +1,6 @@
-<p>hello</p>
-<button (click)="openModal()">Créer un memo</button>
-<router-outlet></router-outlet>
+<memo-header></memo-header>
+<div class="app-content">
+  <button (click)="openModal()">Créer un memo</button>
+  <router-outlet></router-outlet>
+</div>
 <router-outlet name="modal"></router-outlet>

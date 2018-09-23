@@ -1,0 +1,6 @@
+<div class="logo">Logo</div>
+<div class="navigation-menu">
+  <a routerLink="" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">Home</a>
+  <a routerLink="memos" routerLinkActive="active-link">Memos</a>
+</div>
+<fa-icon class="icon" shakeScaleHover [icon]="['fas', 'plus']" size="lg" (click)="editMemo(memo)"></fa-icon>

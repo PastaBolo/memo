@@ -5,7 +5,8 @@ import { HttpClientModule } from '@angular/common/http'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faPencilAlt, faTrashAlt } from '@fortawesome/free-solid-svg-icons'
+import { faPlus as fasFaPlus, faPencilAlt as fasFaPencilAlt } from '@fortawesome/free-solid-svg-icons'
+import { faTrashAlt as farFaTrashAlt } from '@fortawesome/free-regular-svg-icons'
 
 import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
@@ -14,8 +15,9 @@ import { MemoFormComponent } from './memo-form/memo-form.component'
 import { MemosComponent } from './memos/memos.component'
 import { MemoListComponent } from './memos/memo-list/memo-list.component'
 import { ManageMemoDirective } from '@app/core'
+import { HeaderComponent } from './header/header.component'
 
-library.add(faPencilAlt, faTrashAlt)
+library.add(fasFaPlus, fasFaPencilAlt, farFaTrashAlt)
 
 @NgModule({
   declarations: [
@@ -27,7 +29,8 @@ library.add(faPencilAlt, faTrashAlt)
     MemoCardComponent,
     TagCardComponent,
     ManageMemoDirective,
-    ShakeScaleHoverDirective
+    ShakeScaleHoverDirective,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
