@@ -10,7 +10,7 @@ export class ShakeScaleHoverDirective {
 
   @HostListener('mouseenter')
   onmouseenter() {
-    const factory = this.builder.build(this.shake())
+    const factory = this.builder.build(this.shakeScale())
     const player = factory.create(this.el.nativeElement)
     player.play()
   }
@@ -24,16 +24,16 @@ export class ShakeScaleHoverDirective {
 
   constructor(private builder: AnimationBuilder, private el: ElementRef) {}
 
-  private shake(): AnimationMetadata {
+  private shakeScale(): AnimationMetadata {
     return animate(
       '800ms',
       keyframes(
         [].concat(
-          style({ transform: `rotateZ(0) scale(1)` }),
+          style({ transform: '*' }),
           Array.from(Array(6).keys()).map((n, i) =>
-            style({ transform: `rotateZ(${(-1) ** i * (6 / (n + 1)) * 2}deg) scale(1.2)` })
+            style({ transform: `rotateZ(${(-1) ** i * (6 / (n + 1)) * 3}deg) scale(1.2)` })
           ),
-          style({ transform: `rotateZ(0) scale(1.2)` })
+          style({ transform: 'rotateZ(0) scale(1.2)' })
         )
       )
     )
