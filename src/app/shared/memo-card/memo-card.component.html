@@ -6,8 +6,8 @@
     </ng-container>
   </div>
   <div class="icons">
-    <fa-icon class="icon" shakeScaleHover [icon]="['fas', 'pencil-alt']" size="lg" (click)="editMemo(memo)"></fa-icon>
-    <fa-icon class="icon" shakeScaleHover [icon]="['far', 'trash-alt']" size="lg" (click)="deleteMemo(memo)"></fa-icon>
+    <fa-icon class="icon" [icon]="['fas', 'pencil-alt']" size="lg" manageMemo="edit" [memo]="memo" shakeScaleHover></fa-icon>
+    <fa-icon class="icon" [icon]="['far', 'trash-alt']" size="lg" manageMemo="delete" [memo]="memo" shakeScaleHover></fa-icon>
   </div>
 </div>
 <div class="content">

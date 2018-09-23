@@ -40,6 +40,6 @@ export class ShakeScaleHoverDirective {
   }
 
   private reset(): AnimationMetadata {
-    return animate('300ms ease-in-out', style({ transform: 'none' }))
+    return animate('150ms ease-in-out', style({ transform: 'none' }))
   }
 }
