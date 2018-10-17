@@ -1,5 +1,4 @@
 import { Component } from '@angular/core'
-import { Router } from '@angular/router'
 import { MemosService } from '@app/core'
 import { Memo } from '@app/shared'
 
@@ -9,7 +8,7 @@ import { Memo } from '@app/shared'
   styleUrls: ['./memo-list.component.css']
 })
 export class MemoListComponent {
-  constructor(private router: Router, private memosService: MemosService) {}
+  constructor(private memosService: MemosService) {}
 
   get memos(): Memo[] {
     return this.memosService.memos

@@ -8,20 +8,24 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { faPlus as fasFaPlus, faPencilAlt as fasFaPencilAlt } from '@fortawesome/free-solid-svg-icons'
 import { faTrashAlt as farFaTrashAlt } from '@fortawesome/free-regular-svg-icons'
 
+import { ManageMemoDirective } from '@app/core'
+import { ModalComponent, MemoCardComponent, TagCardComponent, ShakeScaleHoverDirective } from '@app/shared'
 import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
-import { ModalComponent, MemoCardComponent, TagCardComponent, ShakeScaleHoverDirective } from '@app/shared'
+import { HomeComponent } from './home/home.component'
 import { MemoFormComponent } from './memo-form/memo-form.component'
 import { MemosComponent } from './memos/memos.component'
 import { MemoListComponent } from './memos/memo-list/memo-list.component'
-import { ManageMemoDirective } from '@app/core'
-import { HeaderComponent } from './header/header.component'
+import { HeaderComponent } from './header/header.component';
+import { LastMemosComponent } from './home/last-memos/last-memos.component';
+import { FooterComponent } from './footer/footer.component'
 
 library.add(fasFaPlus, fasFaPencilAlt, farFaTrashAlt)
 
 @NgModule({
   declarations: [
     AppComponent,
+    HomeComponent,
     ModalComponent,
     MemoFormComponent,
     MemosComponent,
@@ -30,7 +34,9 @@ library.add(fasFaPlus, fasFaPencilAlt, farFaTrashAlt)
     TagCardComponent,
     ManageMemoDirective,
     ShakeScaleHoverDirective,
-    HeaderComponent
+    HeaderComponent,
+    LastMemosComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

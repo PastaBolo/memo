@@ -1,0 +1,23 @@
+:host {
+  display: block;
+}
+
+.tabs {
+  display: flex;
+  margin-left: 25px;
+
+  > button {
+    border: 1px solid black;
+    border-bottom: none;
+    padding: 5px 10px;
+
+    &:not(:last-child) {
+      border-right: none;
+    }
+  }
+}
+
+.list {
+  border: 1px solid black;
+  padding: 5px;
+}

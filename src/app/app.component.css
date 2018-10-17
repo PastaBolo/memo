@@ -1,3 +1,16 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+memo-header,
+memo-footer {
+  flex-shrink: 0;
+}
+
 .app-content {
-  margin: 8px;
+  flex: 1 0 auto;
+  background-color: #f1fbfc;
+  padding: 15px 8px;
 }

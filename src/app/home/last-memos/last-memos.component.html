@@ -1,0 +1,8 @@
+<div class="tabs">
+  <button (click)="tab = 'added'">Ajouts récents</button>
+  <button (click)="tab = 'consulted'">Consultations récentes</button>
+</div>
+<div class="list">
+  <memo-memo-card *ngFor="let memo of memos" [memo]="memo">
+  </memo-memo-card>
+</div>
